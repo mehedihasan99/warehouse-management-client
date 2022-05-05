@@ -10,7 +10,7 @@ const WomenProducts = () => {
         { id: 3, name: "Zip Thru Hoddie", image: women3 },
     ]
     return (
-        <div className='container'>
+        <div id='women' className='container'>
             <h2 className='text-center my-5 text-primary'>Women Products</h2>
             <div className='men-product-container'>
                 {

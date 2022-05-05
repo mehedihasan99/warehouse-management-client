@@ -18,7 +18,7 @@ const MenProducts = () => {
         { id: 6, name: "Dyed Pants", image: men6 }
     ]
     return (
-        <div className='container'>
+        <div id='men' className='container'>
             <h2 className='text-center my-5 text-primary'>Men Products</h2>
             <div className='men-product-container'>
                 {

@@ -6,7 +6,7 @@ const ClothingProducts = () => {
     const [products, setProducts] = useProducts();
     const cloths = products.slice(0, 6)
     return (
-        <div className='container'>
+        <div id='clothing' className='container'>
             <h2 className='text-center my-5 text-primary'>Clothing Products</h2>
             <div className='cloth-container'>
                 {
