@@ -7,7 +7,7 @@ import men3 from '../../../images/mens/men-3.jpg'
 import men4 from '../../../images/mens/men-4.jpg'
 import men5 from '../../../images/mens/men-5.jpg'
 import men6 from '../../../images/mens/men-6.jpg'
-import MenProduct from '../MenProduct.js/MenProduct';
+import MenProduct from '../MenProduct/MenProduct';
 const MenProducts = () => {
     const menProducts = [
         { id: 1, name: "Jacket", image: men1 },
