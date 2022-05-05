@@ -1,0 +1,92 @@
+[
+  {
+    "_id": "1",
+    "name": "Long Sleeve",
+    "image": "https://i.ibb.co/5W91P3z/cloth-1.jpg",
+    "price": "$25",
+    "quantity": 22,
+    "description": "H&H Kids' Long Sleeve Merino Tee",
+    "supplier": "Silhouettes"
+  },
+  {
+    "_id": "2",
+    "name": "Women's Pants",
+    "image": "https://i.ibb.co/2gqHxQp/cloth-2.jpg",
+    "price": "$18",
+    "quantity": 10,
+    "description": "H&H Women's Long Leggings",
+    "supplier": "Dahlia Apparel"
+  },
+  {
+    "_id": "3",
+    "name": "Amie Mcbride",
+    "image": "https://i.ibb.co/w4Wd3V3/cloth-3.jpg",
+    "price": "$37",
+    "quantity": 31,
+    "description": "H&H Women's Merino Blend V Neck Top",
+    "supplier": "Suits & Separates"
+  },
+  {
+    "_id": "4",
+    "name": "Hooded Sweatshirt",
+    "image": "https://i.ibb.co/CtnB6Sb/cloth-4.jpg",
+    "price": "$40",
+    "quantity": 36,
+    "description": "H&H Men's Plain Hooded Sweatshirt",
+    "supplier": "Clover Clothing Co."
+  },
+  {
+    "_id": "5",
+    "name": "Hooded Sweatshirt",
+    "image": "https://i.ibb.co/wpLWDWC/cloth-5.jpg",
+    "price": "$1,060.08",
+    "quantity": 40,
+    "description": "H&H Men's Plain Hooded Sweatshirt",
+    "supplier": "Clover Clothing Co."
+  },
+  {
+    "_id": "6",
+    "name": "Cooldry Crop",
+    "image": "https://i.ibb.co/v3CJB21/cloth-6.jpg",
+    "price": "$55",
+    "quantity": 23,
+    "description": "Active Intent Women's Cooldry Crop Leggings",
+    "supplier": "24-Karat Clothing"
+  },
+  {
+    "_id": "7",
+    "name": "Leggings",
+    "image": "https://i.ibb.co/3fbJcdT/cloth-7.jpg",
+    "price": "$34",
+    "quantity": 28,
+    "description": "H&H Women's Long Leggings",
+    "supplier": "Red Betty Boutique"
+  },
+  {
+    "_id": "8",
+    "name": "Pyjama Set",
+    "image": "https://i.ibb.co/QkjNZZG/cloth-8.jpg",
+    "price": "$37",
+    "quantity": 39,
+    "description": "Women's Flannelette Pyjama Set",
+    "supplier": "Porcelain Apparel"
+  },
+  {
+    "_id": "9",
+    "name": "Long Sleeve",
+    "image": "https://i.ibb.co/2hjGpCL/cloth-9.jpg",
+    "price": "$37",
+    "quantity": 32,
+    "description": "Kids' Thermal Long Sleeve Tee",
+    "supplier": "Ballad apparel"
+  },
+  {
+    "_id": "10",
+    "name": "Oversized Hoodie",
+    "image": "https://i.ibb.co/mCg5Q1f/cloth-10.jpg",
+    "price": "$55",
+    "quantity": 35,
+    "description": "Eeyore Disney Women's Oversized Hoodie Lounge Top",
+    "supplier": "jean Jams"
+  }
+]
