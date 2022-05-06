@@ -1,8 +1,6 @@
 import React from 'react';
-
-const MyItem = ({ product }) => {
-    console.log(product);
-    const { name, image, description, price, quantity, supplier } = product;
+const ManageItem = ({ product }) => {
+    const { _id, image, name, price, quantity, supplier, description } = product;
     return (
         <div className="card">
             <img src={image} className="card-img-top" alt="..." />
@@ -12,10 +10,9 @@ const MyItem = ({ product }) => {
                 <h6>Quantity: {quantity}</h6>
                 <h6>Supplier Name: {supplier}</h6>
                 <p className="card-text">{description}</p>
-                <button href="#" className="btn btn-primary">Delete</button>
             </div>
         </div>
     );
 };
 
-export default MyItem;
+export default ManageItem;

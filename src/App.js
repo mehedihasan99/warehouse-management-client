@@ -10,9 +10,8 @@ import Login from './Pages/Login/Login/Login';
 import Register from './Pages/Login/Register/Register';
 import RequireAuth from './Pages/Login/RequireAuth/RequireAuth';
 import AddProduct from './Pages/AddProduct/AddProduct';
-import MyItems from './Pages/MyItems/MyItems';
-import ManageItems from './Pages/ManageItems/ManageItems';
-
+import ManagesItems from './Pages/ManageInventorys/ManagesItems';
+import MyItemsManage from './Pages/MyItemsManage/MyItemsManage';
 function App() {
   return (
     <div>
@@ -30,14 +29,14 @@ function App() {
             <AddProduct></AddProduct>
           </RequireAuth>
         }></Route>
-        <Route path='/myItems' element={
+        <Route path='/manageInventory' element={
           <RequireAuth>
-            <MyItems></MyItems>
+            <ManagesItems></ManagesItems>
           </RequireAuth>
         }></Route>
-        <Route path='/manageItems' element={
+        <Route path='/myItem' element={
           <RequireAuth>
-            <ManageItems></ManageItems>
+            <MyItemsManage></MyItemsManage>
           </RequireAuth>
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>

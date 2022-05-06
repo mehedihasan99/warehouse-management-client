@@ -1,22 +1,22 @@
 import React from 'react';
 import useProducts from '../../hooks/useProducts';
-import MyItem from '../MyItem/MyItem';
-import './MyItems.css'
-const MyItems = () => {
+import ManageItem from '../ManageInventory/ManageItem';
+import './ManagesItems.css'
+const ManagesItems = () => {
     const [products, setProducts] = useProducts();
     return (
         <div className='container'>
             <h2 className='text-center my-5 text-primary'>All Products</h2>
-            <div className='my-items-container'>
+            <div className='managesItems-container'>
                 {
-                    products.map(product => <MyItem
+                    products.map(product => <ManageItem
                         key={product._id}
                         product={product}
-                    ></MyItem>)
+                    ></ManageItem>)
                 }
             </div>
         </div>
     );
 };
 
-export default MyItems;
+export default ManagesItems;
