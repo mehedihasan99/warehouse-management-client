@@ -22,6 +22,12 @@ const Login = () => {
         const pass = passRef.current.value;
         signInWithEmailAndPassword(email, pass);
     }
+    let errorMsg;
+    if (error) {
+
+        errorMsg = <p>Error: {error.message}</p>
+
+    }
     if (user) {
         navigate(from, { replace: true });
     }
@@ -36,6 +42,7 @@ const Login = () => {
                     <span className='text-primary'>New to perfect size?</span>
                     <span> <Link className='link-btn text-danger' to='/register'>Register</Link></span>
                 </p>
+                <p className='text-danger text-center'>{errorMsg}</p>
                 <SocialLogin></SocialLogin>
             </form>
         </div>
