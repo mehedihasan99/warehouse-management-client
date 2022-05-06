@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import './Login.css'
 const Login = () => {
     const emailRef = useRef('');
@@ -35,6 +36,7 @@ const Login = () => {
                     <span className='text-primary'>New to perfect size?</span>
                     <span> <Link className='link-btn text-danger' to='/register'>Register</Link></span>
                 </p>
+                <SocialLogin></SocialLogin>
             </form>
         </div>
     );
