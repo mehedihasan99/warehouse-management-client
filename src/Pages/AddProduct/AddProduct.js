@@ -26,7 +26,7 @@ const AddProduct = () => {
                 <input placeholder='Name' {...register("name", { required: true, maxLength: 20 })} />
                 <input placeholder='Price' type="number" {...register("price")} />
                 <input placeholder='Quantity' type="number" {...register("quantity")} />
-                <input placeholder='Supplier Name' {...register("supplierName")} />
+                <input placeholder='Supplier Name' {...register("supplier")} />
                 <textarea placeholder='Description' {...register("description")} />
                 <input type="submit" value='Add Product' />
             </form>
