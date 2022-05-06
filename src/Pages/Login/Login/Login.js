@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -21,6 +22,11 @@ const Login = () => {
         const email = emailRef.current.value;
         const pass = passRef.current.value;
         signInWithEmailAndPassword(email, pass);
+    }
+    if (loading) {
+        return <div className='text-center mt-5'>
+            <Spinner className='mt-5' animation="border" variant="primary" />
+        </div>
     }
     let errorMsg;
     if (error) {

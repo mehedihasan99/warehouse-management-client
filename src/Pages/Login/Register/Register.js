@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -17,6 +18,11 @@ const Register = () => {
     ] = useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
     const [updateProfile, updating, error] = useUpdateProfile(auth);
     const navigate = useNavigate();
+    if (loading || updating) {
+        return <div className='text-center mt-5'>
+            <Spinner className='mt-5' animation="border" variant="primary" />
+        </div>
+    }
     if (user) {
         console.log('user', user);
     }
@@ -34,7 +40,7 @@ const Register = () => {
         <div className='container main-container'>
             <form onSubmit={handleRegister} className='form-container'>
                 <h3 className='text-center mb-5'>Register</h3>
-                <input type="text" ref={nameRef} name="name" placeholder='Your Name' />
+                <input type="text" ref={nameRef} name="name" placeholder='Your Name' required />
                 <input type="email" ref={emailRef} name="email" placeholder='Your Email' required />
                 <input type="password" ref={passRef} name="password" placeholder='Your Password' />
                 <input type="submit" value="Register" required />

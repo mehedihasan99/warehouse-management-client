@@ -1,4 +1,5 @@
 import React from 'react';
+import { Spinner } from 'react-bootstrap';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
@@ -6,6 +7,11 @@ import auth from '../../../firebase.init';
 const SocialLogin = () => {
     const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
     const navigate = useNavigate()
+    if (loading) {
+        return <div className='text-center mt-5'>
+            <Spinner className='mt-5' animation="border" variant="primary" />
+        </div>
+    }
     let errorMsg;
     if (error) {
 
