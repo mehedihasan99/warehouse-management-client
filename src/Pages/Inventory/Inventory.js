@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'react-toastify';
 
 const Inventory = () => {
     let { id } = useParams();
     const [cloth, setCloth] = useState({});
+    const navigate = useNavigate();
     useEffect(() => {
         const url = `http://localhost:5000/cloth/${id}`;
         fetch(url)
@@ -32,6 +33,7 @@ const Inventory = () => {
                 console.log(data);
                 toast("Item Stock Successfully");
                 event.target.reset();
+                navigate('/')
             })
     }
     // ------------ delivered------------
@@ -55,6 +57,7 @@ const Inventory = () => {
             .then(data => {
                 console.log(data);
                 toast("Item delivered Successfully");
+                navigate('/')
             })
     }
     return (
