@@ -11,6 +11,7 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setCloth(data))
     }, [])
+    // ---------- update-----------
     const handleUpdateStock = event => {
         event.preventDefault();
         const inputQuantity = parseInt(event.target.quantity.value);
@@ -33,6 +34,29 @@ const Inventory = () => {
                 event.target.reset();
             })
     }
+    // ------------ delivered------------
+    const handleDeliveredStock = event => {
+        const mainQuantity = parseInt(cloth.quantity);
+        const quantity = mainQuantity - 1;
+        if (quantity <= 0) {
+            toast("Sold Out");
+        }
+        const updateStock = { quantity };
+
+        //send data to the server
+        fetch(`http://localhost:5000/cloth/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updateStock),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast("Item delivered Successfully");
+            })
+    }
     return (
         <div className="card mx-auto mt-5" style={{ width: "400px" }}>
             <img src={cloth.image} class="card-img-top" alt="..." style={{ width: "200px" }} />
@@ -43,7 +67,9 @@ const Inventory = () => {
                 <h6>Supplier: {cloth.supplier}</h6>
                 <p className="card-text">{cloth.description}</p>
                 <div className='mb-3'>
-                    <button className="btn btn-warning ">delivered</button>
+                    <button
+                        onClick={handleDeliveredStock}
+                        className="btn btn-warning ">delivered</button>
                 </div>
                 <form onSubmit={handleUpdateStock}>
                     <input type="text" name='quantity' placeholder='Update quantity' />
