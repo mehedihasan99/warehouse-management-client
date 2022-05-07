@@ -5,6 +5,11 @@
     align-items: center;
 }
 
+.reset-btn {
+    background-color: white;
+    border: none;
+}
+
 .form-container {
     border-radius: 10px;
     background: linear-gradient(145deg, #ffff, #ffff);

@@ -12,6 +12,7 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setCloth(data))
     }, [])
+
     // ---------- update-----------
     const handleUpdateStock = event => {
         event.preventDefault();

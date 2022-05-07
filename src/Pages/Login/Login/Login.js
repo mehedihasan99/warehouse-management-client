@@ -1,7 +1,8 @@
+import { async } from '@firebase/util';
 import axios from 'axios';
 import React, { useRef } from 'react';
 import { Spinner } from 'react-bootstrap';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import SocialLogin from '../SocialLogin/SocialLogin';
@@ -15,16 +16,25 @@ const Login = () => {
         loading,
         error,
     ] = useSignInWithEmailAndPassword(auth);
+    const [sendPasswordResetEmail, sending, error1] = useSendPasswordResetEmail(
+        auth
+    );
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
-    if (loading) {
+    const resetPassword = async () => {
+        const email = emailRef.current.value;
+        await sendPasswordResetEmail(email);
+        alert('Sent email');
+    }
+    if (loading || sending) {
         return <div className='text-center mt-5'>
             <Spinner className='mt-5' animation="border" variant="primary" />
         </div>
     }
     let errorMsg;
-    if (error) {
+
+    if (error || error1) {
 
         errorMsg = <p>Error: {error.message}</p>
 
@@ -50,6 +60,14 @@ const Login = () => {
                 <p className='text-center mt-4'>
                     <span className='text-primary'>New to perfect size?</span>
                     <span> <Link className='link-btn text-danger' to='/register'>Register</Link></span>
+                </p>
+                <p className='text-center mt-2'>
+                    <span className='text-primary'>Forget password?</span>
+                    <span>
+                        <Link
+                            onClick={resetPassword}
+                            className='link-btn text-danger' to='/register'> Reset password</Link>
+                    </span>
                 </p>
                 <p className='text-danger text-center'>{errorMsg}</p>
                 <SocialLogin></SocialLogin>
