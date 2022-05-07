@@ -1,12 +1,11 @@
 .add-products {
-
     width: 600px;
 }
 
 .add-products input,
 .add-products textarea {
     width: 500px;
-    padding: 7px;
+    padding: 5px;
     margin-top: 8px;
     border-radius: 5px;
     outline: 1px solid rgb(233, 232, 232);

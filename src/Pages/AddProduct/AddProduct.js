@@ -25,7 +25,7 @@ const AddProduct = () => {
     };
     return (
         <div className='add-products mx-auto mt-5 '>
-            <h2 className='text-center text-primary my-5'>Add new item</h2>
+            <h2 className='text-center text-primary'>Add new item</h2>
             <form className='d-flex  flex-column border p-5 rounded' onSubmit={handleSubmit(onSubmit)}>
                 <input placeholder='Photo Url' {...register("image")} />
                 <input placeholder='Email' value={user.email} {...register("email")} readOnly />
