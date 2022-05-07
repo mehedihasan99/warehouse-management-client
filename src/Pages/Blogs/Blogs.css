@@ -1,0 +1,11 @@
+.blogs-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.blogs {
+    border: 1px solid rgb(227, 226, 226);
+    padding: 20px;
+    border-radius: 10px;
+}
