@@ -62,7 +62,7 @@ const Inventory = () => {
     }
     return (
         <div className="card mx-auto mt-5" style={{ width: "400px" }}>
-            <img src={cloth.image} class="card-img-top" alt="..." style={{ width: "200px" }} />
+            <img src={cloth.image} className="card-img-top" alt="..." style={{ width: "200px" }} />
             <div className="card-body">
                 <h5 className="card-title">{cloth.name}</h5>
                 <h6>Price: {cloth.price}</h6>

@@ -1,4 +1,3 @@
-import { async } from '@firebase/util';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -11,8 +10,12 @@ const MyItem = () => {
         const getItems = async () => {
             const email = user.email;
             const url = `http://localhost:5000/clothes?email=${email}`;
-            const { data } = await axios.get(url);
-            setItems(data)
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
+                }
+            });
+            setItems(data);
         }
         getItems();
 
@@ -26,14 +29,14 @@ const MyItem = () => {
                     items.map(item =>
                         <div
                             key={item._id}
-                            class="card">
-                            <img src={item.image} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">{item.name}</h5>
+                            className="card">
+                            <img src={item.image} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">{item.name}</h5>
                                 <h6>Price: {item.price}</h6>
                                 <h6>Quantity: {item.quantity}</h6>
                                 <h6>Supplier: {item.supplier}</h6>
-                                <p class="card-text">{item.description}</p>
+                                <p className="card-text">{item.description}</p>
                             </div>
                         </div>)
                 }

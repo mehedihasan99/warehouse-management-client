@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useRef } from 'react';
 import { Spinner } from 'react-bootstrap';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
@@ -17,12 +18,6 @@ const Login = () => {
     let location = useLocation();
     let from = location.state?.from?.pathname || "/";
     const navigate = useNavigate();
-    const handleLogin = event => {
-        event.preventDefault();
-        const email = emailRef.current.value;
-        const pass = passRef.current.value;
-        signInWithEmailAndPassword(email, pass);
-    }
     if (loading) {
         return <div className='text-center mt-5'>
             <Spinner className='mt-5' animation="border" variant="primary" />
@@ -34,9 +29,17 @@ const Login = () => {
         errorMsg = <p>Error: {error.message}</p>
 
     }
-    if (user) {
+    const handleLogin = async event => {
+        event.preventDefault();
+        const email = emailRef.current.value;
+        const pass = passRef.current.value;
+        await signInWithEmailAndPassword(email, pass);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        console.log(data);
+        localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }
+
     return (
         <div className='container main-container'>
             <form onSubmit={handleLogin} className='form-container'>

@@ -25,17 +25,17 @@ const MyItemsManage = () => {
                     products.map(product =>
                         <div
                             key={product._id}
-                            class="card">
-                            <img src={product.image} class="card-img-top" alt="..." />
-                            <div class="card-body">
-                                <h5 class="card-title">{product.name}</h5>
+                            className="card">
+                            <img src={product.image} className="card-img-top" alt="..." />
+                            <div className="card-body">
+                                <h5 className="card-title">{product.name}</h5>
                                 <h6>Price: {product.price}</h6>
                                 <h6>Quantity: {product.quantity}</h6>
                                 <h6>Supplier: {product.supplier}</h6>
-                                <p class="card-text">{product.description}</p>
+                                <p className="card-text">{product.description}</p>
                                 <button
                                     onClick={() => handleDelete(product._id)}
-                                    href="#" class="btn btn-danger">Delete</button>
+                                    href="#" className="btn btn-danger">Delete</button>
                             </div>
                         </div>)
                 }
