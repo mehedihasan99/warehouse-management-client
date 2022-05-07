@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Inventory = () => {
     let { id } = useParams();
@@ -10,6 +11,28 @@ const Inventory = () => {
             .then(res => res.json())
             .then(data => setCloth(data))
     }, [])
+    const handleUpdateStock = event => {
+        event.preventDefault();
+        const inputQuantity = parseInt(event.target.quantity.value);
+        const mainQuantity = parseInt(cloth.quantity);
+        const quantity = inputQuantity + mainQuantity;
+        const updateStock = { quantity };
+
+        //send data to the server
+        fetch(`http://localhost:5000/cloth/${id}`, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify(updateStock),
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                toast("Item Stock Successfully");
+                event.target.reset();
+            })
+    }
     return (
         <div className="card mx-auto mt-5" style={{ width: "400px" }}>
             <img src={cloth.image} class="card-img-top" alt="..." style={{ width: "200px" }} />
@@ -19,10 +42,14 @@ const Inventory = () => {
                 <h6>Quantity: {cloth.quantity}</h6>
                 <h6>Supplier: {cloth.supplier}</h6>
                 <p className="card-text">{cloth.description}</p>
-                <div >
-                    <button href="#" className="btn btn-primary">Stock</button>
-                    <button className="btn btn-warning ms-4">delivered</button>
+                <div className='mb-3'>
+                    <button className="btn btn-warning ">delivered</button>
                 </div>
+                <form onSubmit={handleUpdateStock}>
+                    <input type="text" name='quantity' placeholder='Update quantity' />
+                    <br />
+                    <input className='btn btn-primary mt-3' type="submit" value="Stock" />
+                </form>
             </div>
         </div>
     );
