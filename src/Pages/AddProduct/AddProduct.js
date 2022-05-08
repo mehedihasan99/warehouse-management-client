@@ -11,7 +11,7 @@ const AddProduct = () => {
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
-        const url = `http://localhost:5000/cloth`;
+        const url = `https://secret-falls-82494.herokuapp.com/cloth`;
         fetch(url, {
             method: 'POST',
             headers: {

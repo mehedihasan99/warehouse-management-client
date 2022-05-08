@@ -6,7 +6,7 @@ const MyItemsManage = () => {
     const handleDelete = id => {
         const proceed = window.confirm("Want to delete?")
         if (proceed) {
-            const url = `http://localhost:5000/cloth/${id}`;
+            const url = `https://secret-falls-82494.herokuapp.com/cloth/${id}`;
             fetch(url, {
                 method: "DELETE"
             })

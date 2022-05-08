@@ -7,7 +7,7 @@ const Inventory = () => {
     const [cloth, setCloth] = useState({});
     const navigate = useNavigate();
     useEffect(() => {
-        const url = `http://localhost:5000/cloth/${id}`;
+        const url = `https://secret-falls-82494.herokuapp.com/cloth/${id}`;
         fetch(url)
             .then(res => res.json())
             .then(data => setCloth(data))
@@ -22,7 +22,7 @@ const Inventory = () => {
         const updateStock = { quantity };
 
         //send data to the server
-        fetch(`http://localhost:5000/cloth/${id}`, {
+        fetch(`https://secret-falls-82494.herokuapp.com/cloth/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
@@ -47,7 +47,7 @@ const Inventory = () => {
         const updateStock = { quantity };
 
         //send data to the server
-        fetch(`http://localhost:5000/cloth/${id}`, {
+        fetch(`https://secret-falls-82494.herokuapp.com/cloth/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json',
