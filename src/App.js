@@ -16,6 +16,7 @@ import ManagesItems from './Pages/ManageInventorys/ManagesItems';
 import MyItemsManage from './Pages/MyItemsManage/MyItemsManage';
 import MyItem from './Pages/MyItem/MyItem';
 import Blogs from './Pages/Blogs/Blogs';
+import FAQs from './Pages/FAQs/FAQs';
 function App() {
   return (
     <div>
@@ -50,6 +51,7 @@ function App() {
           </RequireAuth>
         }></Route>
         <Route path='/register' element={<Register></Register>}></Route>
+        <Route path='/FAQs' element={<FAQs></FAQs>}></Route>
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
