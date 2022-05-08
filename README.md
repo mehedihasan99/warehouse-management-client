@@ -6,6 +6,23 @@ There’s a reason we’re one of the best-known Clothing warehouse shops.We car
 
 ## Live Link: [Perfect Size](https://perfect-size-d555a.web.app/).
 
+## Different features and functionality of my website.
+
+- At first, I am working in to the client site.
+- In the client site I installed react router and I create components.
+- Installed react firebase and make sure authentication with react firebase hook.
+- You can register and login in to this site
+- These are my webpages:- Clothing, Men's, Women's, Blogs, FAQs, Manage, Inventory, Add Items, Manage, Items, My Item, Log Out
+- Used Private route by require auth
+- Without login you can't update items
+- After login you can add item and you also can delete item.
+- After completing Ui design , I connect client site to server site.
+- Connected with MongoDB and keep data on the database.
+- And secure website by jwt and .env file.
+- After completing server site, I work on heroku.
+- Finally, deployed the website into the firebase
+- technology I used: react, react router, bootstrap 5, react-bootstrap, firebase, firebase hook, axious, node, express, mongodb
+
 ## Available Scripts
 
 In the project directory, you can run:
