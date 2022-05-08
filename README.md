@@ -3,7 +3,8 @@
 ## Short description
 
 There’s a reason we’re one of the best-known Clothing warehouse shops.We carry classic Levi’s and Wrangler jeans, western shirts, plus so much more. Our styles span the 50s, 60s, 70s and 80s. Every piece is as original as you - we have something for everyone.
-Live Link: [Perfect Size](https://perfect-size-d555a.web.app/).
+
+## Live Link: [Perfect Size](https://perfect-size-d555a.web.app/).
 
 ## Available Scripts
 
