@@ -15,8 +15,7 @@ const FAQs = () => {
             <p>To ensure a good fit, it is recommended that you compare the measurements of a garment from your existing wardrobe which fits well, to those of the listed items.
             </p>
             <p>*Please understand the measurements given are of the clothing and not your personal measurements. Ideally you should be smaller than the specified sizes to allow for freedom of movement and a good fit.</p>
-            <h5 className='fw-bold'>QUALITY VINTAGE</h5>
-            <p>All items are in VINTAGE CONDITION; preowned goods may show some signs of wear due to age. We always indicate any major flaws or blemishes in the product listings, but tiny signs of wear (pilling, pinholes and fading) are considered normal with vintage items.</p>
+            <h5 className='fw-bold'>BE CAREFUL</h5>
             <p>All items are therefore sold as seen, with any minor wear and tear generally being seen as acceptable. It is never our intention to withhold details such as these, rather sometimes these things are difficult to spot no matter how careful one is.</p>
         </div>
     );
